@@ -1,3 +1,24 @@
+# alias dep_all='./setup/deploy.sh "$0":"$1"; ./setup/deploy.sh $0.robot01:$1;'
+
+
+dep_all ()
+{
+  ./setup/deploy.sh "$1":"$2"
+  ./setup/deploy.sh "$1".robot01:"$2"
+  ./setup/deploy.sh "$1".robot02:"$2"
+  ./setup/deploy.sh "$1".robot03:"$2"
+  ./setup/deploy.sh "$1".robot04:"$2"
+}
+
+dep_all_i ()
+{
+  ./setup/deploy.sh -i "$1":"$2"
+  ./setup/deploy.sh -i "$1".robot01:"$2"
+  ./setup/deploy.sh -i "$1".robot02:"$2"
+  ./setup/deploy.sh -i "$1".robot03:"$2"
+  ./setup/deploy.sh -i "$1".robot04:"$2"
+}
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 
