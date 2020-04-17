@@ -3,3 +3,5 @@
 	name = Juan Sanchez
 [push]
 	default = matching
+[include]
+	path = /home/juan/.gitalias.txt
