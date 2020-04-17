@@ -133,3 +133,142 @@ ssh harv3-vpn.robot02
 ssh harv3-vpn.robot03
 ssh harv3-vpn.robot04
 ssh harv5-vpn
+ssh harv4-vpn
+git status
+git branch
+git checkout issues/1536/py3 
+git reset --hard origin/issues/1536/py3 
+python tests/run.py test_logrecdb
+./loggui/loggui.sh harv6-vpn --harv-id 6 --robot-id 4
+./loggui/loggui.sh harv6-vpn --harv-id 6 --robot-id 4 -s 202004160900
+./loggui/loggui.sh harv6-vpn --harv-id 6 --robot-id 4 -s 20200416090000
+python tests/run.py test_logrecdb
+python tests/run.py test_sessclip
+python tests/run.py test_sessclipper
+git log
+git pull
+git reset --hard origin/issues/1536/py3 
+git log
+git pull
+python tests/run.py test_sessclipper
+python tests/run.py test_logrecdb
+./loggui/loggui.sh harv6-vpn --harv-id 6 --robot-id 4 -s 20200416090000
+git log
+python tests/run.py test_sessionloader
+python tests/run.py test_sessclip_tool
+git log
+git reset --hard origin/issues/1536/py3 
+python tests/run.py test_sessclip_tool
+test_sessclip_tool.SessClipTool_TestCase.test_clip_no_videos
+python tests/run.py test_sessclip_tool.SessClipTool_TestCase.test_clip_no_videos
+ls test_sessclip_tool.SessClipTool_TestCase.test_clip_no_videos
+ls /tmp/sessclip.zip
+ls /tmp/sessclip.zip -la
+python tests/run.py test_sessionloader
+python tests/run.py test_sessionloader.Test_SessionLoaders.test_flatsessloader
+python tests/run.py test_sessionloader.Test_SessionLoaders.test_picksess_loader
+python tests/run.py test_sessionloader
+git reset --hard origin/issues/1536/py3 
+git fetch
+git reset --hard origin/issues/1536/py3 
+python tests/run.py test_sessionloader
+./loggui/loggui.sh harv6-vpn --harv-id 6 --robot-id 4 -s 2020041609000
+./loggui/loggui.sh harv6-vpn --harv-id 6 --robot-id 4 -s 20200416090000
+git log
+git checkout master
+git pull
+code /home/juan/.ssh/config 
+code /home/juan/.bash_aliases 
+dep_all 3
+git log
+ssh harv6-vpn
+./setup/deploy.sh harv6-vpn:strawberry3
+dep_all 3
+ssh harv4-vpn
+ssh harv5-vpn
+dep_all gpu js4
+ssh harv6-vpn
+ssh harv5-vpn.robot01
+dep_all_i harv5-vpn
+ssh harv5-vpn.robot01
+dep_all_i harv5-vpn dev
+./setup/deploy.sh harv5-vpn.robot04:dev
+dep_all_i harv5-vpn dev
+ssh-copy-id harv5-vpn
+ssh-copy-id harv5-vpn.robot01
+ssh-copy-id harv5-vpn.robot02
+ssh-copy-id harv5-vpn.robot03
+ssh-copy-id harv5-vpn.robot04
+ssh harv5-vpn
+ssh harv5-vpn.robot01
+ssh harv5-vpn.robot02
+ssh harv5-vpn.robot03
+cd harv5-vpn.robot03
+ssh harv5-vpn.robot04
+dep_all_i harv5-vpn dev
+ssh harv4-vpn.robot01
+ssh harv4-vpn.robot02
+ssh harv4-vpn.robot03
+ssh harv4-vpn.robot04
+ssh gpu
+ssh harv6-vpn
+ssh harv4-vpn
+ssh harv3-vpn
+ssh harv4-vpn.robot01
+ssh harv4-vpn.robot02
+ssh harv4-vpn.robot03
+ssh harv4-vpn.robot03
+ssh harv4-vpn.robot04
+ssh harv5-vpn
+ssh harv5-vpn.robot02
+ssh harv5-vpn.robot03
+ssh harv5-vpn.robot04
+ssh harv5-vpn.robot01
+dep_all_i harv3-vpn
+git checkout master
+dep_all_i harv4-vpn
+dep_all_i harv4-vpn master
+dep_all_i harv3-vpn master
+dep_all_i harv4-vpn master
+dep_all_i harv3-vpn dev
+git checkout master
+./setup/deploy.sh harv3-vpn:dev
+./setup/deploy.sh -i harv3-vpn:dev
+dep_all_i harv3-vpn master
+dep_all_i harv4-vpn master
+dep_all_i harv5-vpn master
+ssh-copy-id harv4-vpn
+ssh-copy-id harv4-vpn.robot01
+ssh-copy-id harv4-vpn.robot02
+ssh-copy-id harv4-vpn.robot03
+ssh-copy-id harv4-vpn.robot04
+ssh-copy-id harv5-vpn.robot04
+ssh-copy-id harv5-vpn
+ssh-copy-id harv5-vpn.robot01
+ssh-copy-id harv5-vpn.robot02
+ssh-copy-id harv5-vpn.robot03
+ssh-copy-id harv5-vpn.robot04
+ssh-copy-id harv6-vpn
+ssh-copy-id harv6-vpn.robot01
+dep_all () {   ./setup/deploy.sh "$1":"$2";   ./setup/deploy.sh "$1".robot01:"$2";   ./setup/deploy.sh "$1".robot02:"$2";   ./setup/deploy.sh "$1".robot03:"$2";   ./setup/deploy.sh "$1".robot04:"$2"
+ssh-keygen -f "/home/juan/.ssh/known_hosts" -R harv6.robot01
+ssh-copy-id harv6-vpn.robot01
+dep_all_i harv3-vpn dev
+dep_all_i harv4-vpn dev
+dep_all_i harv5-vpn dev
+dep_all_i harv6-vpn dev
+ls
+ssh harv3-vpn
+git checkout issues/2155_harv_errors
+git rebase -i 7
+git rebase -i 
+git rebase -i HEAD~7
+git rebase master
+git push origin issues/2155_harv_errors 
+git push origin issues/2155_harv_errors -f
+dep_all harv6:strawberry3
+dep_all harv6-vpn:strawberry3
+ssh harv3-vpn.robot01
+ssh harv3-vpn.robot02
+ssh harv3-vpn.robot03
+ssh harv3-vpn.robot04
