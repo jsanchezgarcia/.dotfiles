@@ -19,20 +19,30 @@ alias emu='EMU_PYREALSENSE2=1 python utils/emulator.py'
 # dep_all harv3-vpn js1
 dep_all ()
 {
+  if [ "$#" -ne 2 ]
+  then
+    echo "Not enough arguments. Usage: dep_all harv3-vpn js1"
+  else
   ./setup/deploy.sh "$1":"$2"
   ./setup/deploy.sh "$1".robot01:"$2"
   ./setup/deploy.sh "$1".robot02:"$2"
   ./setup/deploy.sh "$1".robot03:"$2"
   ./setup/deploy.sh "$1".robot04:"$2"
+  fi
 }
 
 # Deploy to master and robots using -i.
 # dep_all_i harv3-vpn js1
 dep_all_i ()
 {
+  if [ "$#" -ne 2 ]
+  then
+    echo "Not enough arguments. Usage: dep_all harv3-vpn js1"
+  else
   ./setup/deploy.sh -i "$1":"$2"
   ./setup/deploy.sh -i "$1".robot01:"$2"
   ./setup/deploy.sh -i "$1".robot02:"$2"
   ./setup/deploy.sh -i "$1".robot03:"$2"
   ./setup/deploy.sh -i "$1".robot04:"$2"
+  fi
 }
