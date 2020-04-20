@@ -6,6 +6,9 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Go to strawberry folder and start venv
 alias gostr='cd ~/strawberry; source start.sh'
 
+# Go to chatbot fodler and start venv
+alias gochat='cd ~/chatbot; source start.sh'
+
 # Start AFT VPN
 alias aftvpn='sudo openvpn --config /etc/openvpn/harvnet-vpn/openvpn-client.conf'
 
