@@ -27,10 +27,10 @@ dep_all ()
     echo "Not enough arguments. Usage: dep_all harv3-vpn js1"
   else
   ./setup/deploy.sh "$1":"$2"
-  ./setup/deploy.sh "$1".robot01:"$2"
-  ./setup/deploy.sh "$1".robot02:"$2"
-  ./setup/deploy.sh "$1".robot03:"$2"
-  ./setup/deploy.sh "$1".robot04:"$2"
+  ./setup/deploy.sh "$1".bot1:"$2"
+  ./setup/deploy.sh "$1".bot2:"$2"
+  ./setup/deploy.sh "$1".bot3:"$2"
+  ./setup/deploy.sh "$1".bot4:"$2"
   fi
 }
 
@@ -43,9 +43,9 @@ dep_all_i ()
     echo "Not enough arguments. Usage: dep_all harv3-vpn js1"
   else
   ./setup/deploy.sh -i "$1":"$2"
-  ./setup/deploy.sh -i "$1".robot01:"$2"
-  ./setup/deploy.sh -i "$1".robot02:"$2"
-  ./setup/deploy.sh -i "$1".robot03:"$2"
-  ./setup/deploy.sh -i "$1".robot04:"$2"
+  ./setup/deploy.sh -i "$1".bot1:"$2"
+  ./setup/deploy.sh -i "$1".bot2:"$2"
+  ./setup/deploy.sh -i "$1".bot3:"$2"
+  ./setup/deploy.sh -i "$1".bot4:"$2"
   fi
 }
