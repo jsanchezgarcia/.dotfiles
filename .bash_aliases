@@ -49,3 +49,57 @@ dep_all_i ()
   ./setup/deploy.sh -i "$1".bot4:"$2"
   fi
 }
+
+#FZF custom stuff
+
+# -----------------------------------------------------------------------------
+# git
+# -----------------------------------------------------------------------------
+
+# gco - checkout git branch/tag
+gco() {
+  local branches
+  local target
+
+  branches="$(
+    git branch \
+      | grep -v HEAD \
+      | sed 's/.* //' \
+      | sed 's#remotes/[^/]*/##' \
+      | sort -u \
+      | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}'
+  )" || return
+
+  target="$(
+    printf '%s\n%s' "$branches" \
+      | fzf-tmux \
+          -l40 \
+          -- \
+          --no-hscroll \
+          --ansi \
+          +m \
+          -d '\t' \
+          -n 2 \
+          -1 \
+          -q "$*"
+  )" || return
+
+  git checkout "$(echo "$target" | awk '{print $2}')"
+}
+
+# gcoc - checkout git commit
+gcoc() {
+  local commits
+  local commit
+
+  commits="$(
+    git log --pretty=oneline --abbrev-commit --reverse
+  )" || return
+
+  commit="$(
+    echo "$commits" \
+      | fzf --tac +s +m -e
+  )" || return
+
+  git checkout "$(echo "$commit" | sed "s/ .*//")"
+}

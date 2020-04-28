@@ -115,3 +115,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+source /home/juan/.oh-my-git/prompt.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="$PATH:/home/juan/.diff-so-fancy"
+source /home/juan/.forgit/forgit.plugin.sh
