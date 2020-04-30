@@ -71,6 +71,9 @@
   # commit - amend the tip of the current branch, and edit the message.
   cam = commit --amend --message
 
+  # commit - add all and amend the tip of the current branch, and do not edit the message.
+  aacane = commit -a --amend --no-edit
+
   # commit - amend the tip of the current branch, and do not edit the message.
   cane = commit --amend --no-edit
 
