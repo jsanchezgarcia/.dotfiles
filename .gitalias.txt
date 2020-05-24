@@ -253,7 +253,7 @@
   ### reflog ###
 
   # reflog - reference log that manages when tips of branches are updated.
-  rl = reflog
+  rl = reflog --format='%C(auto)%h %<|(20)%gd %C(blue)%cr%C(reset) %gs (%s)'
 
   ### remote ###
 

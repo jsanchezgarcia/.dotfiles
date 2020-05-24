@@ -18,6 +18,9 @@ alias setup_emu='sudo ./setup/setup-v4l2loopback.sh; ./setup/setup-vcan.sh'
 # Start software emulator
 alias emu='EMU_PYREALSENSE2=1 python utils/emulator.py'
 
+# Start dual software emulator
+alias demu='EMU_PYREALSENSE2=1 python utils/2bot_emulator.py'
+
 # Deploy to master and robots.
 # dep_all harv3-vpn js1
 dep_all ()
