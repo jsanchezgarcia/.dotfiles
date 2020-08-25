@@ -1,6 +1,5 @@
 # Managing dotfiles repo
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 #*************** AFT ALIASES **************#
 
 # Go to strawberry folder and start venv
@@ -11,6 +10,7 @@ alias gochat='cd ~/chatbot; source start.sh'
 
 # Start AFT VPN
 alias aftvpn='sudo openvpn --config /etc/openvpn/harvnet-vpn/openvpn-client.conf'
+alias aftbbotvpn='sudo openvpn --config /etc/openvpn/bbvpn/bbvpn.conf'
 
 # Setup software emulator
 alias setup_emu='sudo ./setup/setup-v4l2loopback.sh; ./setup/setup-vcan.sh'

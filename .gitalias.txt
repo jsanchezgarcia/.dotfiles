@@ -56,7 +56,7 @@
   # branch description
   bd = !"git config branch.$(git rev-parse --abbrev-ref HEAD 2>/dev/null).description"
 
-  # bra nch - edit the description
+  # branch - edit the description
   be = branch --edit-description
 
   # branch and only list branches whose tips are reachable from the specified commit (HEAD if not specified).
@@ -239,6 +239,9 @@
   # rebase - forward-port local commits to the updated upstream head.
   rb = rebase
 
+  # rebase on top of master (automatically pulls)
+  rbm = "!f() { git co master; git pull; git co -; git rebase master; }; f"
+
   # rebase abort - cancel the rebasing process
   rba = rebase --abort
 
@@ -247,6 +250,9 @@
 
   # rbi - rebase interactive on our unpushed commits.
   rbi = !"f() { git rebase -i HEAD~"$1"; }; f"
+
+   # Interactively rebase all the commits on the current branch
+  rbb = !"git rebase --interactive `git merge-base master HEAD`"
 
   # See https://blog.filippo.io/git-fixup-amending-an-older-commit/
   # This is a slightly modified version
@@ -463,42 +469,6 @@
   # Clean and discard changes and untracked files in working tree
   cleanout = !git clean -df && git checkout -- .
 
-  # Expunge a file everywhere; this command is typically for a serious problem,
-  # such as accidentally committing a file of sensitive data, such as passwords.
-  # After you use command, you will likely need to force push everything.
-  # See https://help.github.com/articles/removing-sensitive-data-from-a-repository/
-  expunge = !"f() { git filter-branch --force --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all }; f"
-
-  # Edit all files of the given type
-  edit-cached   = !"f() { git ls-files --cached          | sort -u ; }; `git var GIT_EDITOR` `f`"
-  edit-deleted  = !"f() { git ls-files --deleted         | sort -u ; }; `git var GIT_EDITOR` `f`"
-  edit-others   = !"f() { git ls-files --others          | sort -u ; }; `git var GIT_EDITOR` `f`"
-  edit-ignored  = !"f() { git ls-files --ignored         | sort -u ; }; `git var GIT_EDITOR` `f`"
-  edit-killed   = !"f() { git ls-files --killed          | sort -u ; }; `git var GIT_EDITOR` `f`"
-  edit-modified = !"f() { git ls-files --modified        | sort -u ; }; `git var GIT_EDITOR` `f`"
-  edit-stage    = !"f() { git ls-files --stage | cut -f2 | sort -u ; }; `git var GIT_EDITOR` `f`"
-
-  # Editing and adding conflicted files: when we get many merge conflicts
-  # and want to quickly solve them using an editor, then add the  files.
-  edit-unmerged = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; `git var GIT_EDITOR` `f`"
-  add-unmerged  = !"f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-
-  # Ours & Theirs - easy merging when you know which files you want
-  #
-  # Sometimes during a merge you want to take a file from one side wholesale.
-  #
-  # The following aliases expose the ours and theirs commands which let you
-  # pick a file(s) from the current branch or the merged branch respectively.
-  #
-  #   * ours: checkout our version of a file and add it
-  #   * theirs: checkout their version of a file and add it
-  #
-  # N.b. the function is there as hack to get $@ doing
-  # what you would expect it to as a shell user.
-  #
-  ours   = !"f() { git checkout --ours   $@ && git add $@; }; f"
-  theirs = !"f() { git checkout --theirs $@ && git add $@; }; f"
-
   # Work In Progress: from https://gist.github.com/492227 and VonC on stackoverflow.
   # This enables a quick way to add all new and modified files to the index,
   # while cleaning the index from the files removed from the working tree;
@@ -524,14 +494,6 @@
   # Unpublish the current branch by deleting the
   # remote version of the current branch.
   unpublish = !"git push origin :$(git branch-name)"
-
-  # Delete a branch name, then create the same branch name based on master -
-  # useful if you have, for example, a development branch and master branch
-  # and they go out of sync, and you want to nuke the development branch.
-  #
-  # Calls the `publish` and `unpublish` aliases.
-  #
-  reincarnate = !"f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
 
   # Friendly wording is easier to remember.
   # Thanks to http://gggritso.com/human-git-aliases
