@@ -121,3 +121,6 @@ source /home/juan/.oh-my-git/prompt.sh
 
 export PATH="$PATH:/home/juan/.diff-so-fancy"
 source /home/juan/.forgit/forgit.plugin.sh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# export PYTHONPATH="$HOME/AFT-CI/src:$HOME/AFT-CI/src/lock_dashboard:$HOME/AFT-CI/src/lock_dashboard/buildbot_lock_dashboard"
