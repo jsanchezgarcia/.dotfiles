@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Check if Homebrew is installed
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew is not installed. Installing..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/main/install.sh)"
+else
+  echo "Homebrew is already installed."
+fi
+
+# Install diff-so-fancy if not already installed
+if ! brew list -1 | grep -q "^diff-so-fancy\$"; then
+  echo "diff-so-fancy is not installed. Installing..."
+  brew install diff-so-fancy
+else
+  echo "diff-so-fancy is already installed."
+fi
+
+# Install extensions
+cat ${HOME}/vscode/extensions.txt | xargs -L 1 code --install-extension
+
+echo "Boostrap completed"
