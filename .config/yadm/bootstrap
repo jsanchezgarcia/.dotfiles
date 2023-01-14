@@ -16,7 +16,21 @@ else
   echo "diff-so-fancy is already installed."
 fi
 
-# Install extensions
+install_fzf() {
+  echo "Checking if fzf is already installed"
+  if [ ! $(command -v fzf) ]; then
+    echo "Installing fzf"
+    export NONINTERACTIVE=1
+    brew install fzf
+    $(brew --prefix)/opt/fzf/install
+  else
+    echo "fzf is already installed"
+  fi
+}
+install_fzf
+
+
+# Install VSCode extensions
 cat ${HOME}/vscode/extensions.txt | xargs -L 1 code --install-extension
 
 echo "Boostrap completed"
