@@ -1,0 +1,44 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "cmd+t cmd+l",
+    "command": "pay.cmd.test.rerun"
+  },
+  {
+    "key": "cmd+t cmd+a",
+    "command": "pay.cmd.test"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "search-presets.search"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-search-presets.search"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "extension.jumpy-word",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "extension.jumpy-line",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "Escape",
+    "command": "extension.jumpy-exit",
+    "when": "editorTextFocus && jumpy.isJumpyMode"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "extension.jumpy-exit",
+    "when": "editorTextFocus && jumpy.isJumpyMode"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "extension.jumpy-exit",
+    "when": "editorTextFocus && jumpy.isJumpyMode"
+  }
+]

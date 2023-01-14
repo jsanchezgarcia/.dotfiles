@@ -1,0 +1,45 @@
+{
+  "update.channel": "none",
+  "update.mode": "none",
+  "security.workspace.trust.enabled": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+  "remote.autoForwardPorts": false,
+  "remote.restoreForwardedPorts": false,
+  "remote.SSH.enableAgentForwarding": false,
+  "remote.SSH.path": "sc-ssh-wrapper",
+  "remote.SSH.useLocalServer": true,
+  "remote.SSH.connectTimeout": 60,
+  "debug.javascript.automaticallyTunnelRemoteServer": false,
+  "window.title": "${appName}${separator}${rootPath}${separator}${activeEditorMedium}",
+  "typescript.tsdk": "frontend/js-scripts/node_modules/typescript/lib",
+  "search-presets.custom": {
+    "Trailhead Ruby": {
+      "filesToInclude": "**/trailhead/**/*.rb"
+    },
+    "Trailhead Typescript": {
+      "filesToInclude": "**/trailhead/**/*.ts*"
+    },
+    "Ruby Everywhere": {
+      "filesToInclude": ".rb"
+    },
+    "Tests": {
+      "filesToInclude": ".test.*, .spec.*, .e2e.*, .driver.*"
+    },
+  },
+  "search.smartCase": true,
+  "run-pay.liveNudging.enabled": true,
+  "search.defaultViewMode": "list",
+  "search.quickOpen.includeSymbols": false,
+  "search.searchEditor.defaultNumberOfContextLines": 3,
+  "window.zoomLevel": 1,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
