@@ -45,4 +45,7 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+GIT_PROMPT_ONLY_IN_REPO=0
+source /Users/juans/.bash-git-prompt/gitprompt.sh
+
 ### END JUANS CUSTOM STUFF ####
