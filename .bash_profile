@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ### BEGIN STRIPE
 # All Stripe related shell configuration
 # is at ~/.stripe/shellinit/bash_profile and is
@@ -11,6 +12,10 @@
 if [[ -f ~/.stripe/shellinit/bash_profile ]]; then
   source ~/.stripe/shellinit/bash_profile
 fi
+
+alias set_flag='pay exec lib/flag/scripts/set_flag_value.rb --flag-name'
+
+
 ### END STRIPE
 
 # START - Managed by chef cookbook stripe_cpe_bin
