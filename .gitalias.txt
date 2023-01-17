@@ -23,10 +23,12 @@
 
   # add all
   aa = add --all
+  at = add -u
 
   ### branch ###
 
   recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n${1-15}; }; f"
+  new = "!git fetch origin master-passing-tests && git checkout -b $USER-$1 origin/master-passing-tests && echo Unsetting remote branch tracking. Will use the local branch name when pushing. && git branch --unset-upstream #"
 
   ### commit ###
 
