@@ -12,7 +12,7 @@
   "remote.SSH.connectTimeout": 60,
   "debug.javascript.automaticallyTunnelRemoteServer": false,
   "window.title": "${appName}${separator}${rootPath}${separator}${activeEditorMedium}",
-  "typescript.tsdk": "",
+  "typescript.tsdk": "frontend/js-scripts/node_modules/typescript/lib",
   "search-presets.custom": {
     "Trailhead Ruby": {
       "filesToInclude": "**/trailhead/**/*.rb"

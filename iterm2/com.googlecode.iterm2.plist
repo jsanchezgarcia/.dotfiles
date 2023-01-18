@@ -1862,9 +1862,8 @@
 	<integer>4</integer>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Paste History</string>
-		<string>Command History</string>
 		<string>Actions</string>
+		<string>Command History</string>
 	</array>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
