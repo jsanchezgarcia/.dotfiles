@@ -13,7 +13,9 @@ if [[ -f ~/.stripe/shellinit/bash_profile ]]; then
   source ~/.stripe/shellinit/bash_profile
 fi
 
-alias set_flag='pay exec lib/flag/scripts/set_flag_value.rb --flag-name'
+alias enable_flag='pay exec lib/flag/scripts/set_flag_value.rb --on --flag-name'
+alias disable_flag='pay exec lib/flag/scripts/set_flag_value.rb --on --flag-name'
+
 
 
 ### END STRIPE
