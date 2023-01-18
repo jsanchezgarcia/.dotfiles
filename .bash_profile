@@ -14,7 +14,7 @@ if [[ -f ~/.stripe/shellinit/bash_profile ]]; then
 fi
 
 alias enable_flag='pay exec lib/flag/scripts/set_flag_value.rb --on --flag-name'
-alias disable_flag='pay exec lib/flag/scripts/set_flag_value.rb --on --flag-name'
+alias disable_flag='pay exec lib/flag/scripts/set_flag_value.rb --off --flag-name'
 
 
 
@@ -52,7 +52,10 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-GIT_PROMPT_ONLY_IN_REPO=0
-source /Users/juans/.bash-git-prompt/gitprompt.sh
+
 
 ### END JUANS CUSTOM STUFF ####
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(parse_git_branch)\[\e[00m\]$ '

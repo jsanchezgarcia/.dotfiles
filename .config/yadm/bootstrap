@@ -37,28 +37,28 @@ install_fzf() {
 }
 install_fzf
 
-# Install https://github.com/magicmonty/bash-git-prompt
-echo "Checking if bash-git-prompt installed"
-if [ ! -d ~/.bash-git-prompt ]; then
-  echo "Installing bash-git-prompt"
-  git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
-  if ! grep -q "source $HOME/.bash-git-prompt/gitprompt.sh" ~/.bash_profile; then
-    echo "GIT_PROMPT_ONLY_IN_REPO=0" >> ~/.bash_profile
-    echo "source $HOME/.bash-git-prompt/gitprompt.sh" >> ~/.bash_profile
-  fi
-else
-  echo "bash-git-prompt already installed"
-fi
-
-
 # Install VSCode extensions
 cat ${HOME}/vscode/extensions.txt | xargs -L 1 code --install-extension
 
-# Make autocomplete case insensitive 
+# Make autocomplete case insensitive
 # If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
 # so it won't get overriden
 if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
 # Add shell-option to ~/.inputrc to enable case-insensitive tab completion
 grep -q "set completion-ignore-case On" ~/.inputrc || echo "set completion-ignore-case On" >> ~/.inputrc
+
+
+# Add simple git prompt
+if ! grep -q "parse_git_branch" ~/.bash_profile; then
+    echo "parse_git_branch() {" >> ~/.bash_profile
+    echo "     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'" >> ~/.bash_profile
+    echo "}" >> ~/.bash_profile
+    echo "export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]\$ '" >> ~/.bash_profile
+fi
+
+# Add iterm2 shell integration
+if ! grep -q "iterm2_shell_integration" ~/.bash_profile; then
+  echo "source /Users/juans/.iterm2_shell_integration.bash"
+fi
 
 echo "Boostrap completed"
