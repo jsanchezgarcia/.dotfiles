@@ -41,5 +41,6 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.accessibilitySupport": "off"
 }
