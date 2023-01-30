@@ -1863,6 +1863,8 @@
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Actions</string>
+		<string>Command History</string>
+		<string>Captured Output</string>
 	</array>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
