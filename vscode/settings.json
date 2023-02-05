@@ -43,14 +43,16 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.accessibilitySupport": "off",
-  "workbench.activityBar.visible": false,
   "prettier.requireConfig": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
   /**
   * Better Defaults
   **/
-  "editor.copyWithSyntaxHighlighting": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.emptySelectionClipboard": false,
+"editor.copyWithSyntaxHighlighting": false,
+  "editor.emptySelectionClipboard": true,
   "workbench.editor.enablePreview": false,
   "window.newWindowDimensions": "inherit",
   "files.trimTrailingWhitespace": true,
@@ -65,8 +67,6 @@
   */
   "workbench.activityBar.visible": false,
   "workbench.sideBar.location": "right",
-  "workbench.statusBar.visible": false,
-  "editor.renderIndentGuides": false,
   "editor.minimap.enabled": false,
   /**
   * Silence The Noise
@@ -74,7 +74,7 @@
   "breadcrumbs.enabled": false,
   "scm.diffDecorations": "none",
 //   "editor.hover.enabled": false,
-  "editor.matchBrackets": "never",
+//   "editor.matchBrackets": "near",
   "workbench.tips.enabled": false,
   "editor.colorDecorators": false,
   "git.decorations.enabled": false,
@@ -97,10 +97,27 @@
   * Typography
   **/
   "editor.fontSize": 15,
-  "editor.lineHeight": 24,
-  "window.zoomLevel": 1,
+"editor.lineHeight": 24,
   "zenMode.fullScreen": false,
   "zenMode.hideLineNumbers": false,
-  "workbench.colorTheme": "Palenight Theme",
+  "workbench.colorTheme": "Dracula",
   "editor.fontFamily": "MonoLisa",
+"editor.guides.indentation": false,
+"diffEditor.ignoreTrimWhitespace": false,
+"workbench.editor.limit.value": 3,
+"workbench.editor.limit.perEditorGroup": true,
+"workbench.editor.limit.enabled": true,
+"workbench.editor.limit.excludeDirty": true,
+"github.copilot.enable": {
+  "*": false,
+  "ruby": true,
+  "java": true,
+  "python": true,
+  "go": true,
+  "scala": true,
+  "javascript": true,
+  "typescript": true
+},
+"search.followSymlinks": false,
+"window.zoomLevel": 1,
 }

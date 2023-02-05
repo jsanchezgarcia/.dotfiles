@@ -234,19 +234,6 @@
         "when": "editorTextFocus"
     },
     /**
-    * amVim Finder Fix
-    **/
-    {
-        "key": "enter",
-        "command": "editor.action.nextMatchFindAction",
-        "when": "findWidgetVisible"
-    },
-    {
-        "key": "shift+enter",
-        "command": "editor.action.previousMatchFindAction",
-        "when": "findWidgetVisible"
-    },
-    /**
     * IntelliSense
     **/
     {
@@ -300,5 +287,39 @@
     {
         "key": "ctrl+cmd",
         "command": "workbench.action.toggleMultiCursorModifier"
+    },
+    {
+        "key": "cmd+k cmd+h",
+        "command": "git.viewHistory"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPrevious",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-workbench.action.terminal.findNext",
+        "when": "terminalFindInputFocused && terminalHasBeenCreated || terminalFindInputFocused && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+cmd+]",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
 ]
