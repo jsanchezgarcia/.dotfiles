@@ -3,10 +3,7 @@
 [include]
 	path = /Users/juans/.gitalias.txt
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = code --wait
-[interactive]
-	diffFilter = diff-so-fancy --patch
 [color]
 	ui = true
 [color "diff-highlight"]

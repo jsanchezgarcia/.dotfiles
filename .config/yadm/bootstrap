@@ -8,14 +8,6 @@ else
   echo "Homebrew is already installed."
 fi
 
-# Install diff-so-fancy if not already installed
-if ! brew list -1 | grep -q "^diff-so-fancy\$"; then
-  echo "diff-so-fancy is not installed. Installing..."
-  brew install diff-so-fancy
-else
-  echo "diff-so-fancy is already installed."
-fi
-
 # Install rectangle if not already installed
 if ! brew list -1 | grep -q "^rectangle\$"; then
   echo "rectangle is not installed. Installing..."

@@ -61,17 +61,9 @@
   "editor.detectIndentation": false,
   "window.nativeFullScreen": false,
   "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  /**
-  * Hide Everything
-  */
-  "workbench.activityBar.visible": false,
+"files.trimFinalNewlines": true,
   "workbench.sideBar.location": "right",
-  "editor.minimap.enabled": false,
-  /**
-  * Silence The Noise
-  */
-  "breadcrumbs.enabled": false,
+"editor.minimap.enabled": false,
   "scm.diffDecorations": "none",
 //   "editor.hover.enabled": false,
 //   "editor.matchBrackets": "near",
@@ -120,4 +112,30 @@
 },
 "search.followSymlinks": false,
 "window.zoomLevel": 1,
+"github.copilot.advanced": {
+
+},
+"workbench.activityBar.visible": false,
+"editor.inlineSuggest.enabled": true,
+"breadcrumbs.showArrays": false,
+"breadcrumbs.showBooleans": false,
+"breadcrumbs.showConstructors": false,
+"breadcrumbs.showEnumMembers": false,
+"breadcrumbs.showEnums": false,
+"breadcrumbs.showFields": false,
+"breadcrumbs.showInterfaces": false,
+"breadcrumbs.showKeys": false,
+"breadcrumbs.showMethods": false,
+"breadcrumbs.showModules": false,
+"breadcrumbs.showNamespaces": false,
+"breadcrumbs.showNumbers": false,
+"breadcrumbs.showNull": false,
+"breadcrumbs.showObjects": false,
+"breadcrumbs.showPackages": false,
+"breadcrumbs.showOperators": false,
+"breadcrumbs.showProperties": false,
+"breadcrumbs.showStrings": false,
+"breadcrumbs.showStructs": false,
+"breadcrumbs.showTypeParameters": false,
+"breadcrumbs.showVariables": false,
 }

@@ -61,3 +61,4 @@ parse_git_branch() {
 export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(parse_git_branch)\[\e[00m\]$ '
 
 source "${HOME}/.iterm2_shell_integration.bash"
+export GH_HOST=git.corp.stripe.com
