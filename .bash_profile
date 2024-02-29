@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### BEGIN STRIPE
 # All Stripe related shell configuration
 # is at ~/.stripe/shellinit/bash_profile and is
