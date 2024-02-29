@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 ### BEGIN STRIPE
 # All Stripe related shell configuration
 # is at ~/.stripe/shellinit/bash_profile and is
@@ -12,12 +13,8 @@
 if [[ -f ~/.stripe/shellinit/bash_profile ]]; then
   source ~/.stripe/shellinit/bash_profile
 fi
-
 alias enable_flag='pay exec lib/flag/scripts/set_flag_value.rb --on --flag-name'
 alias disable_flag='pay exec lib/flag/scripts/set_flag_value.rb --off --flag-name'
-
-
-
 ### END STRIPE
 
 # START - Managed by chef cookbook stripe_cpe_bin
@@ -25,8 +22,6 @@ alias tc='/usr/local/stripe/bin/test_cookbook'
 alias cz='/usr/local/stripe/bin/chef-zero'
 alias cookit='tc && cz'
 # STOP - Managed by chef cookbook stripe_cpe_bin
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 ### BEGIN JUANS CUSTOM STUFF ####
 
@@ -39,17 +34,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
@@ -60,5 +44,4 @@ parse_git_branch() {
 }
 export PS1='\u@\h \[\e[32m\]\w \[\e[91m\]$(parse_git_branch)\[\e[00m\]$ '
 
-source "${HOME}/.iterm2_shell_integration.bash"
 export GH_HOST=git.corp.stripe.com

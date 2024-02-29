@@ -14,8 +14,8 @@ alias gopay='cd ~/stripe/pay-server;'
 # git
 # -----------------------------------------------------------------------------
 
-# gco - checkout git recent branch/tag
-gco() {
+# gcr - checkout git recent branch/tag
+gcr() {
   local branches
   local target
 
@@ -45,8 +45,8 @@ gco() {
   git checkout "$(echo "$target" | awk '{print $2}')"
 }
 
-# gcoa - checkout git all branchs/tags
-gcoa() {
+# gco - checkout git all branchs/tags
+gco() {
   local branches
   local target
 
